@@ -3,9 +3,9 @@ import { Facebook, Instagram, Youtube } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-black text-white dark:bg-white dark:text-black border-t border-border">
-      <div className="container mx-auto px-4 py-12 text-center">
-        <div className="mb-8">
+    <footer className="bg-black text-white dark:bg-white dark:text-black border-t border-border w-full">
+      <div className="px-4 py-6 text-center">
+        <div className="mb-4">
           <p className="text-sm text-gray-300 dark:text-gray-700 leading-relaxed max-w-4xl mx-auto">
             Este evento TEDx independiente se realiza bajo licencia de TED. En el espíritu de las ideas que vale la pena
             difundir, TEDx es un programa de eventos locales autoorganizados que reúne a las personas para compartir una
@@ -18,7 +18,7 @@ export function Footer() {
         </div>
 
         {/* Links */}
-        <div className="mb-8">
+        <div className="mb-4">
           <div className="flex flex-wrap gap-6 justify-center">
             <Link
               href="/preguntas-frecuentes"
@@ -47,7 +47,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mb-8">
+        <div className="mb-4">
           <div className="flex space-x-4 justify-center">
             <Link
               href="#"
@@ -77,7 +77,7 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 dark:border-gray-200 pt-8">
+        <div className="border-t border-gray-800 dark:border-gray-200 pt-4">
           <p className="text-sm text-gray-300 dark:text-gray-700">
             2025-2026 TECNOLÓGICO DE MONTERREY SALTILLO – TODOS LOS DERECHOS RESERVADOS TEDx
           </p>
