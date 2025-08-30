@@ -14,7 +14,6 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10"></div>
         <div className="container mx-auto px-4 relative">
           <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
@@ -30,7 +29,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="animate-pulse-glow bg-black hover:bg-black/90 text-white dark:bg-white dark:text-black dark:hover:bg-white/90"
+                className="btn-glow bg-black hover:bg-gray-800 text-white dark:bg-white dark:text-black dark:hover:bg-gray-200"
                 asChild
               >
                 <Link href="https://www.ted.com/tedx/events/66014" target="_blank" rel="noopener noreferrer">
@@ -42,7 +41,7 @@ export default function HomePage() {
                 variant="outline"
                 size="lg"
                 asChild
-                className="border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black bg-transparent"
+                className="btn-outline-glow border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black bg-transparent"
               >
                 <Link href="/acerca-de-ted">Conoce más sobre TED</Link>
               </Button>
@@ -52,10 +51,10 @@ export default function HomePage() {
       </section>
 
       {/* Event Info Cards */}
-      <section className="py-16 bg-muted/30 dark:bg-muted/20">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="text-center hover:shadow-lg transition-shadow duration-300 animate-slide-in-left border-2 hover:border-black dark:hover:border-white">
+            <Card className="text-center hover:shadow-lg transition-shadow duration-300 animate-slide-in-left">
               <CardContent className="p-6">
                 <Calendar className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">Fecha</h3>
@@ -65,7 +64,7 @@ export default function HomePage() {
             </Card>
 
             <Card
-              className="text-center hover:shadow-lg transition-shadow duration-300 animate-slide-in-left border-2 hover:border-black dark:hover:border-white"
+              className="text-center hover:shadow-lg transition-shadow duration-300 animate-slide-in-left"
               style={{ animationDelay: "0.2s" }}
             >
               <CardContent className="p-6">
@@ -77,7 +76,7 @@ export default function HomePage() {
             </Card>
 
             <Card
-              className="text-center hover:shadow-lg transition-shadow duration-300 animate-slide-in-left border-2 hover:border-black dark:hover:border-white"
+              className="text-center hover:shadow-lg transition-shadow duration-300 animate-slide-in-left"
               style={{ animationDelay: "0.4s" }}
             >
               <CardContent className="p-6">
@@ -102,14 +101,14 @@ export default function HomePage() {
               líderes de pensamiento se reúnen para compartir ideas que pueden cambiar el mundo.
             </p>
             <div className="grid md:grid-cols-2 gap-8 text-left">
-              <div className="p-6 border-2 border-muted hover:border-black dark:hover:border-white transition-colors rounded-lg">
+              <div className="p-6 border-2 border-muted transition-colors rounded-lg">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Nuestra Misión</h3>
                 <p className="text-muted-foreground">
                   Crear un espacio de diálogo e inspiración donde las ideas innovadoras encuentren su voz y puedan
                   impactar positivamente en nuestra comunidad.
                 </p>
               </div>
-              <div className="p-6 border-2 border-muted hover:border-black dark:hover:border-white transition-colors rounded-lg">
+              <div className="p-6 border-2 border-muted transition-colors rounded-lg">
                 <h3 className="text-xl font-semibold mb-4 text-primary">Nuestra Visión</h3>
                 <p className="text-muted-foreground">
                   Ser el evento TEDx más influyente del noreste de México, conectando mentes brillantes y fomentando la

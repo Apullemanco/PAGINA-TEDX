@@ -27,11 +27,10 @@ export default function AcercaDeTedPage() {
 
                     <div className="space-y-4 text-muted-foreground">
                       <p>
-                        TED es una organización sin fines de lucro dedicada a las ideas que vale la pena difundir, a
-                        menudo en forma de charlas breves pronunciadas por destacados pensadores y hacedores. Muchas de
-                        estas charlas se dan en conferencias TED, salones TED íntimos y miles de eventos TEDx
-                        organizados de forma independiente en todo el mundo. Los videos de estas charlas están
-                        disponibles, gratis, en{" "}
+                        TED es una organización sin fines de lucro dedicada a difundir ideas, a menudo en forma de
+                        charlas breves pronunciadas por destacados pensadores y hacedores. Muchas de estas charlas se
+                        dan en conferencias TED, salones TED íntimos y miles de eventos TEDx organizados de forma
+                        independiente en todo el mundo. Los videos de estas charlas están disponibles, gratis, en{" "}
                         <Link
                           href="https://www.ted.com"
                           target="_blank"
@@ -176,33 +175,33 @@ export default function AcercaDeTedPage() {
                 <Card className="h-full border-2 hover:border-black dark:hover:border-white transition-colors">
                   <CardContent className="p-8">
                     <div className="flex items-center mb-6">
-                      <Zap className="h-12 w-12 text-accent mr-4" />
+                      <Zap className="h-12 w-12 text-red-600 mr-4" />
                       <h2 className="text-3xl font-bold text-foreground">Acerca de TEDx</h2>
                     </div>
 
                     <div className="space-y-4 text-muted-foreground">
                       <p>
-                        <strong className="text-accent">x = evento organizado de forma independiente</strong>
+                        <strong className="text-red-600">x = evento organizado de forma independiente</strong>
                       </p>
 
                       <p>
-                        En el espíritu de las ideas que vale la pena difundir, TEDx es un programa de eventos locales
-                        autoorganizados que reúne a las personas para compartir una experiencia similar a la de TED. En
-                        un evento TEDx, el video de TED Talks y los oradores en vivo se combinan para generar una
-                        discusión y una conexión profundas. Estos eventos locales autoorganizados tienen la marca TEDx,
-                        donde x = evento TED organizado de forma independiente. La Conferencia TED brinda orientación
-                        general para el programa TEDx, pero los eventos individuales de TEDx son autoorganizados.
-                        (Sujeto a ciertas reglas y regulaciones.)
+                        En el espíritu de difundir ideas, TEDx es un programa de eventos locales autoorganizados que
+                        reúne a las personas para compartir una experiencia similar a la de TED. En un evento TEDx, el
+                        video de TED Talks y los oradores en vivo se combinan para generar una discusión y una conexión
+                        profundas. Estos eventos locales autoorganizados tienen la marca TEDx, donde x = evento TED
+                        organizado de forma independiente. La Conferencia TED brinda orientación general para el
+                        programa TEDx, pero los eventos individuales de TEDx son autoorganizados. (Sujeto a ciertas
+                        reglas y regulaciones.)
                       </p>
 
-                      <div className="mt-8 p-6 bg-accent/10 rounded-lg border-l-4 border-accent">
-                        <p className="text-accent font-semibold mb-4">Sigue a TED en:</p>
+                      <div className="mt-8">
+                        <p className="text-red-600 font-semibold mb-4">Sigue a TED en:</p>
                         <div className="flex flex-wrap gap-4">
                           <Link
                             href="https://twitter.com/tedtalks"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary hover:underline font-medium hover:text-accent transition-colors"
+                            className="text-primary hover:underline font-medium hover:text-red-600 transition-colors"
                           >
                             Twitter
                           </Link>
@@ -210,7 +209,7 @@ export default function AcercaDeTedPage() {
                             href="https://www.facebook.com/TED"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary hover:underline font-medium hover:text-accent transition-colors"
+                            className="text-primary hover:underline font-medium hover:text-red-600 transition-colors"
                           >
                             Facebook
                           </Link>
@@ -218,7 +217,7 @@ export default function AcercaDeTedPage() {
                             href="https://www.instagram.com/ted"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary hover:underline font-medium hover:text-accent transition-colors"
+                            className="text-primary hover:underline font-medium hover:text-red-600 transition-colors"
                           >
                             Instagram
                           </Link>
@@ -226,7 +225,7 @@ export default function AcercaDeTedPage() {
                             href="https://www.linkedin.com/company/ted-conferences"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-primary hover:underline font-medium hover:text-accent transition-colors"
+                            className="text-primary hover:underline font-medium hover:text-red-600 transition-colors"
                           >
                             LinkedIn
                           </Link>

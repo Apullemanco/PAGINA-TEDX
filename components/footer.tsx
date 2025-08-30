@@ -4,9 +4,9 @@ import { Facebook, Instagram, Youtube } from "lucide-react"
 export function Footer() {
   return (
     <footer className="bg-black text-white dark:bg-white dark:text-black border-t border-border">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 text-center">
         <div className="mb-8">
-          <p className="text-sm text-gray-300 dark:text-gray-700 leading-relaxed max-w-4xl">
+          <p className="text-sm text-gray-300 dark:text-gray-700 leading-relaxed max-w-4xl mx-auto">
             Este evento TEDx independiente se realiza bajo licencia de TED. En el espíritu de las ideas que vale la pena
             difundir, TEDx es un programa de eventos locales autoorganizados que reúne a las personas para compartir una
             experiencia similar a la de TED. En un evento TEDx, el video de TED Talks y los oradores en vivo se combinan
@@ -19,7 +19,7 @@ export function Footer() {
 
         {/* Links */}
         <div className="mb-8">
-          <div className="flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-6 justify-center">
             <Link
               href="/preguntas-frecuentes"
               className="text-sm text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black transition-colors"
@@ -48,7 +48,7 @@ export function Footer() {
         </div>
 
         <div className="mb-8">
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 justify-center">
             <Link
               href="#"
               className="w-10 h-10 bg-white text-black dark:bg-black dark:text-white rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"

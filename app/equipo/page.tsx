@@ -2,15 +2,16 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Users } from "lucide-react"
+import Image from "next/image"
 
 export default function EquipoPage() {
   const teamMembers = [
-    { name: "Nombre del Organizador 1", quote: "PON TU FRASE AQUI" },
-    { name: "Nombre del Organizador 2", quote: "PON TU FRASE AQUI" },
-    { name: "Nombre del Organizador 3", quote: "PON TU FRASE AQUI" },
-    { name: "Nombre del Organizador 4", quote: "PON TU FRASE AQUI" },
-    { name: "Nombre del Organizador 5", quote: "PON TU FRASE AQUI" },
-    { name: "Nombre del Organizador 6", quote: "PON TU FRASE AQUI" },
+    { name: "David Gil Alvarado", quote: "Las manecillas marcan los minutos, pero tu marcas lo que significan", image: "/images/david-gil.png" },
+    { name: "Claudia Sofía López Espinosa", quote: "PON TU FRASE AQUI" },
+    { name: "David Escudero Elizondo", quote: "PON TU FRASE AQUI", image: "/images/david-escudero.jpeg" },
+    { name: "Ana Sofía Martínez Valero", quote: "PON TU FRASE AQUI" },
+    { name: "Hugo Torres Miñón", quote: "PON TU FRASE AQUI" },
+    { name: "Daniela Garza Valdés", quote: "PON TU FRASE AQUI" },
   ]
 
   return (
@@ -48,8 +49,20 @@ export default function EquipoPage() {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Photo Placeholder - Circular and smaller */}
-                  <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <Users className="h-10 w-10 text-primary/60" />
+                  <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden">
+                    {member.image ? (
+                      <Image
+                        src={member.image || "/placeholder.svg"}
+                        alt={member.name}
+                        width={128}
+                        height={128}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                        <Users className="h-16 w-16 text-primary/60" />
+                      </div>
+                    )}
                   </div>
 
                   {/* Name */}
