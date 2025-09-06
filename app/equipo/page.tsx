@@ -6,12 +6,12 @@ import Image from "next/image"
 
 export default function EquipoPage() {
   const teamMembers = [
-    { name: "David Gil Alvarado", quote: "Las manecillas marcan los minutos, pero tu marcas lo que significan", image: "/images/david-gil.png" },
+    { name: "David Gil Alvarado", quote: "Las manecillas marcan los minutos, pero tu marcas lo que significan", image: "" },
     { name: "Claudia Sofía López Espinosa", quote: "PON TU FRASE AQUI" },
-    { name: "David Escudero Elizondo", quote: "PON TU FRASE AQUI", image: "/images/david-escudero.jpeg" },
+    { name: "David Escudero Elizondo", quote: "Borren Blue Swing", image: "" },
     { name: "Ana Sofía Martínez Valero", quote: "PON TU FRASE AQUI" },
     { name: "Hugo Torres Miñón", quote: "PON TU FRASE AQUI" },
-    { name: "Daniela Garza Valdés", quote: "PON TU FRASE AQUI" },
+    { name: "Daniela Garza Valdés", quote: "Lo imposible solo tarda un poco más" },
   ]
 
   return (
