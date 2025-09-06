@@ -6,9 +6,9 @@ import Image from "next/image"
 
 export default function EquipoPage() {
   const teamMembers = [
-    { name: "David Gil Alvarado", quote: "Las manecillas marcan los minutos, pero tu marcas lo que significan", image: "" },
-    { name: "Claudia Sofía López Espinosa", quote: "PON TU FRASE AQUI" },
-    { name: "David Escudero Elizondo", quote: "Borren Blue Swing", image: "" },
+    { name: "David Gil Alvarado", quote: "Las manecillas marcan el tiempo, pero tú le das significado.", image: "/images/david-gil.png" },
+    { name: "Claudia Sofía López Espinosa", quote: "Nada en la vida es estático. Somos átomos que siempre estan en constante vibración" },
+    { name: "David Escudero Elizondo", quote: "El tiempo va a pasar de todos modos, haz lo mejor que puedas con él", image: "/images/david-escudero.jpeg" },
     { name: "Ana Sofía Martínez Valero", quote: "PON TU FRASE AQUI" },
     { name: "Hugo Torres Miñón", quote: "PON TU FRASE AQUI" },
     { name: "Daniela Garza Valdés", quote: "Lo imposible solo tarda un poco más" },
