@@ -1,17 +1,28 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
-import { Users } from "lucide-react"
 import Image from "next/image"
 
 export default function EquipoPage() {
   const teamMembers = [
-    { name: "David Gil Alvarado", quote: "Las manecillas marcan el tiempo, pero tú le das significado.", image: "/images/david-gil.png" },
-    { name: "Claudia Sofía López Espinosa", quote: "Nada en la vida es estático. Somos átomos que siempre estan en constante vibración" },
-    { name: "David Escudero Elizondo", quote: "El tiempo va a pasar de todos modos, haz lo mejor que puedas con él", image: "/images/david-escudero.jpeg" },
-    { name: "Ana Sofía Martínez Valero", quote: "PON TU FRASE AQUI" },
-    { name: "Hugo Torres Miñón", quote: "PON TU FRASE AQUI" },
-    { name: "Daniela Garza Valdés", quote: "Lo imposible solo tarda un poco más" },
+    {
+      name: "David Gil Alvarado",
+      quote: "Las manecillas marcan los minutos, pero tu marcas lo que significan",
+      image: "/images/davidga.jpeg",
+    },
+    {
+      name: "Claudia Sofía López Espinosa",
+      quote: "Nada en la vida es estático. Somos átomos que siempre estan en constante vibración",
+      image: "/images/clau.jpeg",
+    },
+    {
+      name: "David Escudero Elizondo",
+      quote: "El tiempo va a pasar de todos modos, haz lo mejor que puedas con él",
+      image: "/images/davide.jpeg",
+    },
+    { name: "Ana Sofía Martínez Valero", quote: "PON TU FRASE AQUI", image: "/images/ana-sofi.jpeg" },
+    { name: "Hugo Torres Miñón", quote: "PON TU FRASE AQUI", image: "/images/hugo.jpeg" },
+    { name: "Daniela Garza Valdés", quote: "Lo imposible solo tarda un poco más", image: "/images/dani.jpeg" },
   ]
 
   return (
@@ -29,12 +40,14 @@ export default function EquipoPage() {
             <div className="mb-16 animate-fade-in-up">
               <Card className="overflow-hidden">
                 <CardContent className="p-0">
-                  <div className="aspect-[16/9] bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                    <div className="text-center">
-                      <Users className="h-24 w-24 text-primary mx-auto mb-4" />
-                      <h3 className="text-2xl font-semibold text-foreground mb-2">Foto del Equipo Organizador</h3>
-                      <p className="text-muted-foreground">Próximamente - Foto grupal de todos los organizadores</p>
-                    </div>
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <Image
+                      src="/images/mesa.jpeg"
+                      alt="Equipo organizador TEDxTecnológico de Monterrey"
+                      width={1200}
+                      height={675}
+                      className="w-full h-full object-cover object-[65%_40%] scale-100"
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -50,19 +63,13 @@ export default function EquipoPage() {
                 >
                   {/* Photo Placeholder - Circular and smaller */}
                   <div className="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden">
-                    {member.image ? (
-                      <Image
-                        src={member.image || "/placeholder.svg"}
-                        alt={member.name}
-                        width={128}
-                        height={128}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                        <Users className="h-16 w-16 text-primary/60" />
-                      </div>
-                    )}
+                    <Image
+                      src={member.image || "/placeholder.svg"}
+                      alt={member.name}
+                      width={128}
+                      height={128}
+                      className="w-full h-full object-cover object-[55%_45%] scale-150"
+                    />
                   </div>
 
                   {/* Name */}
