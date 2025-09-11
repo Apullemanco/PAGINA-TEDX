@@ -21,7 +21,7 @@ export default function EquipoPage() {
       image: "/images/davide.jpeg",
     },
     { name: "Ana Sofía Martínez Valero", quote: "En cada pequeño cambio, hay infinitas posibilidades de transformación", image: "/images/ana-sofi.jpeg" },
-    { name: "Hugo Torres Miñón", quote: "¡Si vas a SOÑAR, EXAGERA!!", image: "/images/hugo.jpeg" },
+    { name: "Hugo Torres Miñón", quote: "¡Si vas a SOÑAR, EXAGERA!", image: "/images/hugo.jpeg" },
     { name: "Daniela Garza Valdés", quote: "Lo imposible solo tarda un poco más", image: "/images/dani.jpeg" },
   ]
 
