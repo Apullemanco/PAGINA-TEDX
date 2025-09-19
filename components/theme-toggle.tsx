@@ -15,11 +15,7 @@ export function ThemeToggle() {
   }, [])
 
   const handleThemeChange = (newTheme: string) => {
-    console.log("[v0] Changing theme to:", newTheme)
     setTheme(newTheme)
-    setTimeout(() => {
-      document.documentElement.classList.toggle("dark", newTheme === "dark")
-    }, 0)
   }
 
   if (!mounted) {
@@ -35,23 +31,20 @@ export function ThemeToggle() {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent
-        align="end"
-        className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
-      >
-        <DropdownMenuItem
-          onClick={() => handleThemeChange("light")}
-          className="hover:bg-gray-100 dark:hover:bg-gray-700"
-        >
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem onClick={() => handleThemeChange("light")}>
           <Sun className="mr-2 h-4 w-4" />
           <span>Modo Claro</span>
         </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => handleThemeChange("dark")}
-          className="hover:bg-gray-100 dark:hover:bg-gray-700"
-        >
+        <DropdownMenuItem onClick={() => handleThemeChange("dark")}>
           <Moon className="mr-2 h-4 w-4" />
           <span>Modo Oscuro</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => handleThemeChange("system")}>
+          <div className="mr-2 h-4 w-4 flex items-center justify-center">
+            <div className="h-3 w-3 rounded-full bg-gradient-to-r from-yellow-400 to-blue-600"></div>
+          </div>
+          <span>Sistema</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

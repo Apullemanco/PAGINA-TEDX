@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Lightbulb, Zap } from "lucide-react"
 import Link from "next/link"
@@ -7,8 +5,6 @@ import Link from "next/link"
 export default function AcercaDeTedPage() {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-
       <main className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -239,8 +235,6 @@ export default function AcercaDeTedPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }

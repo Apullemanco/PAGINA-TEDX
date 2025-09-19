@@ -1,5 +1,3 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 
@@ -20,15 +18,17 @@ export default function EquipoPage() {
       quote: "El tiempo va a pasar de todos modos, haz lo mejor que puedas con él",
       image: "/images/davide.jpeg",
     },
-    { name: "Ana Sofía Martínez Valero", quote: "En cada pequeño cambio, hay infinitas posibilidades de transformación", image: "/images/ana-sofi.jpeg" },
+    {
+      name: "Ana Sofía Martínez Valero",
+      quote: "En cada pequeño cambio, hay infinitas posibilidades de transformación",
+      image: "/images/ana-sofi.jpeg",
+    },
     { name: "Hugo Torres Miñón", quote: "¡Si vas a SOÑAR, EXAGERA!", image: "/images/hugo.jpeg" },
     { name: "Daniela Garza Valdés", quote: "Lo imposible solo tarda un poco más", image: "/images/dani.jpeg" },
   ]
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
-
       <main className="py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -100,8 +100,6 @@ export default function EquipoPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }
