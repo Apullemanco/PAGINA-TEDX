@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "TEDxTecnológico de Monterrey | Saltillo 2026",
   description: "Evento TEDx organizado por estudiantes del Tecnológico de Monterrey Campus Saltillo",
   generator: "v0.app",
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({
