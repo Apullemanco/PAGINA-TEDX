@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, UserPlus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -49,6 +49,23 @@ export function Header() {
             </nav>
           </div>
 
+          <div className="hidden lg:flex flex-1 justify-end">
+            <Button
+              asChild
+              className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <a
+                href="https://drive.google.com/file/d/1ZwfAE9bedglqIVCYnNEyNSFT1WRGW4oR/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <UserPlus className="h-4 w-4" />
+                Postúlate como Orador
+              </a>
+            </Button>
+          </div>
+
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center">
             <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -71,6 +88,18 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+              <Button asChild className="bg-red-600 hover:bg-red-700 text-white shadow-lg w-full">
+                <a
+                  href="https://drive.google.com/file/d/1ZwfAE9bedglqIVCYnNEyNSFT1WRGW4oR/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <UserPlus className="h-4 w-4" />
+                  Postúlate como Orador
+                </a>
+              </Button>
             </nav>
           </div>
         )}
