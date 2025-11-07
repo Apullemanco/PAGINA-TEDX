@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, UserPlus } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import Link from "next/link"
 
 export default function SpeakersPage() {
@@ -14,18 +14,7 @@ export default function SpeakersPage() {
             ¡Mantente atento para conocer quiénes serán nuestros ponentes!
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button asChild size="lg" className="btn-glow bg-primary hover:bg-primary/90 text-white">
-              <Link
-                href="https://drive.google.com/file/d/1ZwfAE9bedglqIVCYnNEyNSFT1WRGW4oR/view"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <UserPlus className="mr-2 h-5 w-5" />
-                Postúlate como Orador
-              </Link>
-            </Button>
-
+          <div className="flex justify-center">
             <Button asChild size="lg" variant="outline">
               <Link href="/">
                 <ArrowLeft className="mr-2 h-5 w-5" />

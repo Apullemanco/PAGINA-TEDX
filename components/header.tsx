@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, UserPlus } from "lucide-react"
+import { Menu, X, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -54,15 +54,10 @@ export function Header() {
               asChild
               className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <a
-                href="https://drive.google.com/file/d/1ZwfAE9bedglqIVCYnNEyNSFT1WRGW4oR/view"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2"
-              >
-                <UserPlus className="h-4 w-4" />
-                Postúlate como Orador
-              </a>
+              <Link href="/contacto" className="flex items-center gap-2">
+                <Mail className="h-4 w-4" />
+                Contacto
+              </Link>
             </Button>
           </div>
 
@@ -89,16 +84,14 @@ export function Header() {
                 </Link>
               ))}
               <Button asChild className="bg-red-600 hover:bg-red-700 text-white shadow-lg w-full">
-                <a
-                  href="https://drive.google.com/file/d/1ZwfAE9bedglqIVCYnNEyNSFT1WRGW4oR/view"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/contacto"
                   className="flex items-center justify-center gap-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <UserPlus className="h-4 w-4" />
-                  Postúlate como Orador
-                </a>
+                  <Mail className="h-4 w-4" />
+                  Contacto
+                </Link>
               </Button>
             </nav>
           </div>

@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Facebook, Instagram, Youtube } from "lucide-react"
 
 export function Footer() {
   return (
@@ -43,35 +42,6 @@ export function Footer() {
               className="text-sm text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black transition-colors"
             >
               Contacto
-            </Link>
-          </div>
-        </div>
-
-        <div className="mb-4">
-          <div className="flex space-x-4 justify-center">
-            <Link
-              href="#"
-              className="w-10 h-10 bg-white text-black dark:bg-black dark:text-white rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-            >
-              <Instagram className="h-5 w-5" />
-            </Link>
-            <Link
-              href="#"
-              className="w-10 h-10 bg-white text-black dark:bg-black dark:text-white rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-            >
-              <Facebook className="h-5 w-5" />
-            </Link>
-            <Link
-              href="#"
-              className="w-10 h-10 bg-white text-black dark:bg-black dark:text-white rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-            >
-              <Youtube className="h-5 w-5" />
-            </Link>
-            <Link
-              href="#"
-              className="w-10 h-10 bg-white text-black dark:bg-black dark:text-white rounded-full flex items-center justify-center hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
-            >
-              <div className="text-xs font-bold">TT</div>
             </Link>
           </div>
         </div>
