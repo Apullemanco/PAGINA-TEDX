@@ -179,9 +179,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16 animate-fade-in-up">
               <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-[#E62B1E] to-[#FF4136] mb-6 shadow-xl">
                 <Lightbulb className="h-12 w-12 text-white" />
@@ -258,7 +258,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-[#E62B1E] to-[#FF4136] text-white">
+      <section className="py-16 bg-black text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">¿Listo para ser parte de algo extraordinario?</h2>
@@ -267,7 +267,7 @@ export default function HomePage() {
             </p>
             <Button
               size="lg"
-              className="bg-white text-[#E62B1E] hover:bg-gray-100 shadow-lg text-lg px-8 py-6 font-semibold"
+              className="bg-[#E62B1E] text-white hover:bg-[#C62616] shadow-lg text-lg px-8 py-6 font-semibold"
               asChild
             >
               <Link href="/contacto">

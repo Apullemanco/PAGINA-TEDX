@@ -1,118 +1,196 @@
-import { Clock, Coffee, Users, Mic } from "lucide-react"
+"use client"
+
+import { Clock } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export default function HorarioPage() {
-  const horarioItems = [
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  })
+
+  const scheduleEvents = [
     {
-      titulo: "Registro",
-      hora: "12:00 pm - 12:30 pm",
-      descripcion: "Registro de asistentes y entrega de materiales",
-      icono: Users,
-      color: "bg-blue-100 text-blue-600",
+      title: "Registro",
+      time: "12:00 pm - 12:30 pm",
+      description: "Registro de asistentes y entrega de materiales",
+      type: "registration",
     },
     {
-      titulo: "Primera sesión",
-      hora: "12:30 pm - 2:00 pm",
-      descripcion: "Charlas inspiradoras de nuestros speakers",
-      icono: Mic,
-      color: "bg-red-100 text-red-600",
+      title: "Primera sesión",
+      time: "12:30 pm - 2:00 pm",
+      description: "Charlas inspiradoras de nuestros speakers",
+      type: "session",
     },
     {
-      titulo: "Break",
-      hora: "2:00 pm - 3:00 pm",
-      descripcion: "Tiempo para networking y refrigerio",
-      icono: Coffee,
-      color: "bg-green-100 text-green-600",
+      title: "Break",
+      time: "2:00 pm - 3:00 pm",
+      description: "Tiempo para networking y refrigerio",
+      type: "break",
     },
     {
-      titulo: "Segunda sesión",
-      hora: "3:00 pm - 4:30 pm",
-      descripcion: "Continuamos con más charlas transformadoras",
-      icono: Mic,
-      color: "bg-red-100 text-red-600",
+      title: "Segunda sesión",
+      time: "3:00 pm - 4:30 pm",
+      description: "Continuamos con más charlas transformadoras",
+      type: "session",
     },
     {
-      titulo: "Break",
-      hora: "4:30 pm - 5:00 pm",
-      descripcion: "Pausa para conectar con otros asistentes",
-      icono: Coffee,
-      color: "bg-green-100 text-green-600",
+      title: "Break",
+      time: "4:30 pm - 5:00 pm",
+      description: "Pausa para conectar con otros asistentes",
+      type: "break",
     },
     {
-      titulo: "Tercera sesión",
-      hora: "5:00 pm - 6:30 pm",
-      descripción: "Cierre del evento con las últimas presentaciones",
-      icono: Mic,
-      color: "bg-red-100 text-red-600",
+      title: "Tercera sesión",
+      time: "5:00 pm - 6:30 pm",
+      description: "¡No te pierdas ningún momento!",
+      type: "session",
     },
   ]
 
+  useEffect(() => {
+    const eventDate = new Date("2026-02-27T00:00:00").getTime()
+
+    const updateTimer = () => {
+      const now = new Date().getTime()
+      const distance = eventDate - now
+
+      if (distance > 0) {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000),
+        })
+      }
+    }
+
+    updateTimer()
+    const interval = setInterval(updateTimer, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted/20">
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center mb-4">
-            <Clock className="h-8 w-8 text-primary mr-3" />
-            <h1 className="text-4xl font-bold text-foreground">Horario del Evento</h1>
-          </div>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Conoce la agenda completa de TEDxTecnológico de Monterrey
-          </p>
-          <p className="text-sm text-muted-foreground mt-2">Horario de México</p>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-6">
-            {horarioItems.map((item, index) => {
-              const IconComponent = item.icono
-              return (
-                <div
-                  key={index}
-                  className="bg-card rounded-xl shadow-lg border border-border p-6 hover:shadow-xl transition-all duration-300 hover:scale-[1.02]"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className={`p-3 rounded-full ${item.color} flex-shrink-0`}>
-                      <IconComponent className="h-6 w-6" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                        <h3 className="text-xl font-semibold text-foreground">{item.titulo}</h3>
-                        <span className="text-lg font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
-                          {item.hora}
-                        </span>
-                      </div>
-                      <p className="text-muted-foreground">{item.descripcion}</p>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-
-          <div className="mt-12 text-center">
-            <div className="bg-card rounded-xl shadow-lg border border-border p-8">
-              <h3 className="text-2xl font-semibold text-foreground mb-4">¡No te pierdas ningún momento!</h3>
-              <p className="text-muted-foreground mb-6">
+    <main className="min-h-screen bg-background">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16 animate-fade-in-up">
+              <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-[#E62B1E] to-[#FF4136] mb-6 shadow-xl">
+                <Clock className="h-12 w-12 text-white" />
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-[#E62B1E] to-[#FF4136] bg-clip-text text-transparent">
+                  Horario del Evento
+                </span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+                Descubre la experiencia completa de TEDx con charlas inspiradoras y oportunidades de networking
+              </p>
+              <p className="text-base text-muted-foreground italic">
                 Te recomendamos llegar 15 minutos antes del registro para asegurar tu lugar y disfrutar de toda la
                 experiencia TEDx.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-                  Sesiones de charlas
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-                  Breaks y networking
-                </div>
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full mr-2"></div>
-                  Registro
-                </div>
+            </div>
+
+            <div className="overflow-hidden rounded-2xl border-2 border-gray-200 shadow-xl">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-gradient-to-r from-[#E62B1E] to-[#FF4136] text-white">
+                      <th className="px-6 py-4 text-left text-lg font-bold">Actividad</th>
+                      <th className="px-6 py-4 text-left text-lg font-bold">Horario</th>
+                      <th className="px-6 py-4 text-left text-lg font-bold">Descripción</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {scheduleEvents.map((event, index) => (
+                      <tr
+                        key={index}
+                        className={`transition-colors ${
+                          event.type === "session"
+                            ? "bg-red-50 hover:bg-red-100"
+                            : event.type === "break"
+                              ? "bg-gray-50 hover:bg-gray-100"
+                              : "bg-white hover:bg-gray-50"
+                        }`}
+                      >
+                        <td className="px-6 py-5 font-semibold text-lg border-b border-gray-200">
+                          <div className="flex items-center gap-3">
+                            <div
+                              className={`w-3 h-3 rounded-full ${
+                                event.type === "session"
+                                  ? "bg-[#E62B1E]"
+                                  : event.type === "break"
+                                    ? "bg-black"
+                                    : "bg-gray-400"
+                              }`}
+                            ></div>
+                            {event.title}
+                          </div>
+                        </td>
+                        <td className="px-6 py-5 text-muted-foreground font-medium border-b border-gray-200 whitespace-nowrap">
+                          {event.time}
+                        </td>
+                        <td className="px-6 py-5 text-muted-foreground border-b border-gray-200">
+                          {event.description}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-red-50 rounded-xl p-6 border-2 border-[#E62B1E]/20">
+                <div className="w-4 h-4 rounded-full bg-[#E62B1E] mb-3"></div>
+                <h3 className="font-bold text-lg mb-2">Sesiones de charlas</h3>
+                <p className="text-sm text-muted-foreground">Ideas inspiradoras que vale la pena difundir</p>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
+                <div className="w-4 h-4 rounded-full bg-black mb-3"></div>
+                <h3 className="font-bold text-lg mb-2">Breaks y networking</h3>
+                <p className="text-sm text-muted-foreground">Momentos para conectar con la comunidad</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 border-2 border-gray-200">
+                <div className="w-4 h-4 rounded-full bg-gray-400 mb-3"></div>
+                <h3 className="font-bold text-lg mb-2">Registro</h3>
+                <p className="text-sm text-muted-foreground">Bienvenida y entrega de materiales</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      <section className="py-16 bg-gradient-to-br from-[#E62B1E] to-[#FF4136]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto text-center text-white">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-8">Cuenta Regresiva para el Evento</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                <div className="text-5xl lg:text-6xl font-black mb-2">{timeLeft.days}</div>
+                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">Días</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                <div className="text-5xl lg:text-6xl font-black mb-2">{timeLeft.hours}</div>
+                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">Horas</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                <div className="text-5xl lg:text-6xl font-black mb-2">{timeLeft.minutes}</div>
+                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">Minutos</div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
+                <div className="text-5xl lg:text-6xl font-black mb-2">{timeLeft.seconds}</div>
+                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">Segundos</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }
