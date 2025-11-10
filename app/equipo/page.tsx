@@ -1,4 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card"
+"use client"
+
 import Image from "next/image"
 
 export default function EquipoPage() {
@@ -6,122 +7,137 @@ export default function EquipoPage() {
     {
       name: "David Gil Alvarado",
       role: "Organizador",
-      quote: "Las manecillas marcan los minutos, pero tu marcas lo que significan",
-      image: "/images/davidga.jpeg",
+      phrase: "Las manecillas marcan los minutos, pero tu marcas lo que significan",
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/davidg%20nuevo-ab2MvgZ7YlgELH40pEGBZFzO0ayBQ2.png",
+      bgColor: "bg-[#E62B1E]",
     },
     {
       name: "Claudia Sofía López Espinosa",
       role: "Co-organizadora",
-      quote: "Nada en la vida es estático. Somos átomos que siempre estan en constante vibración",
-      image: "/images/clau.jpeg",
+      phrase: "Nada en la vida es estático. Somos átomos que siempre estan en constante vibración",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/clau%20nuevo-jslx88GgNKVXAeFd31Du1hNXvJJd0V.png",
+      bgColor: "bg-black",
     },
     {
       name: "David Escudero Elizondo",
       role: "Marketing/Comunicaciones",
-      quote: "El tiempo va a pasar de todos modos, haz lo mejor que puedas con él",
-      image: "/images/davide.jpeg",
+      phrase: "El tiempo va a pasar de todos modos, haz lo mejor que puedas con él",
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/davide%20nuevo-XZUwblEaX1dRWVv5xOzA5uGEZ3UQ7a.png",
+      bgColor: "bg-[#E62B1E]",
     },
     {
       name: "Ana Sofía Martínez Valero",
       role: "Curaduría",
-      quote: "En cada pequeño cambio, hay infinitas posibilidades de transformación",
-      image: "/images/ana-sofi.jpeg",
+      phrase: "En cada pequeño cambio, hay infinitas posibilidades de transformación",
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Anasofi%20nuevo-6xyGI5iEXPtbEeL0CWoiC4Af9badDH.png",
+      bgColor: "bg-black",
     },
     {
       name: "Hugo Torres Miñón",
       role: "Operaciones",
-      quote: "¡Si vas a SOÑAR, EXAGERA!",
-      image: "/images/hugo.jpeg",
+      phrase: "¡Si vas a SOÑAR, EXAGERA!",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hugo%20nuevo-txTtvykNrkDWsFb7v2yJq7eXNNIPn4.png",
+      bgColor: "bg-[#E62B1E]",
     },
     {
       name: "Daniela Garza Valdés",
       role: "Alianzas/Patrocinios",
-      quote: "Lo imposible solo tarda un poco más",
-      image: "/images/dani.jpeg",
+      phrase: "Lo imposible solo tarda un poco más",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Dani%20nuevo-10ed8pSvP631A5eZTWKz1vDWbu08ZK.png",
+      bgColor: "bg-black",
     },
   ]
 
   return (
-    <div className="min-h-screen bg-background">
-      <main className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h1 className="text-5xl lg:text-6xl font-bold text-center mb-4 animate-fade-in-up">
-              <span className="bg-gradient-to-r from-[#E62B1E] to-[#FF4136] bg-clip-text text-transparent">
-                Nuestro Equipo
-              </span>
-            </h1>
-            <p className="text-center text-xl text-muted-foreground mb-16 animate-fade-in-up">
-              Estudiantes apasionados creando experiencias transformadoras
-            </p>
+    <main className="min-h-screen bg-white py-20">
+      <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-5xl lg:text-6xl font-bold text-center mb-4">
+            <span className="bg-gradient-to-r from-[#E62B1E] to-[#FF4136] bg-clip-text text-transparent">
+              Nuestro Equipo
+            </span>
+          </h1>
+          <p className="text-center text-xl text-gray-600 mb-16">
+            Estudiantes apasionados creando experiencias transformadoras
+          </p>
 
-            {/* Team Photo Section */}
-            <div className="mb-20 animate-fade-in-up">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <Image
-                  src="/images/mesa.jpeg"
-                  alt="Equipo organizador TEDxTecnológico de Monterrey"
-                  width={1200}
-                  height={675}
-                  className="w-full h-full object-cover object-[65%_40%] scale-100"
-                />
-              </div>
+          <div className="mb-20">
+            <div className="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MESA.png-9kX4i5Zf09K9KUhPPsh5mv9awkV2YE.jpeg"
+                alt="Equipo completo TEDx Tecnológico de Monterrey"
+                width={1600}
+                height={900}
+                className="w-full h-auto object-cover"
+              />
             </div>
+          </div>
 
-            {/* Individual Team Members */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {teamMembers.map((member, index) => (
-                <div key={index} className="animate-slide-in-left" style={{ animationDelay: `${index * 0.1}s` }}>
-                  <div className="p-6 text-center">
-                    {/* Photo without hover effects */}
-                    <div className="relative w-40 h-40 mx-auto mb-4">
-                      <div className="relative w-full h-full rounded-full overflow-hidden">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {teamMembers.map((member, index) => (
+              <div key={index} className="group perspective-1000">
+                <div className="relative w-full h-[680px] transition-transform duration-700 transform-style-3d group-hover:rotate-y-180">
+                  {/* Frente de la tarjeta */}
+                  <div
+                    className={`absolute inset-0 ${member.bgColor} rounded-2xl overflow-hidden backface-hidden shadow-xl flex flex-col p-6`}
+                  >
+                    {/* Foto grande en la parte superior */}
+                    <div className="w-full flex-1 flex items-center justify-center mb-4">
+                      <div className="w-full h-[480px] rounded-xl overflow-hidden">
                         <Image
                           src={member.image || "/placeholder.svg"}
                           alt={member.name}
-                          width={160}
-                          height={160}
-                          className="w-full h-full object-cover object-[55%_45%] scale-150"
+                          width={350}
+                          height={480}
+                          className="w-full h-full object-cover"
                         />
                       </div>
                     </div>
 
-                    {/* Name */}
-                    <h3 className="text-xl font-bold text-foreground mb-2">{member.name}</h3>
+                    {/* Nombre y puesto en la parte inferior */}
+                    <div className="text-center text-white pb-2">
+                      <h3 className="text-2xl font-bold mb-1 leading-tight">{member.name}</h3>
+                      <p className="text-sm uppercase tracking-wide opacity-90">{member.role}</p>
+                    </div>
+                  </div>
 
-                    {/* Role */}
-                    <p className="text-sm font-semibold text-[#E62B1E] uppercase tracking-wide mb-3">{member.role}</p>
-
-                    {/* Separator */}
-                    <div className="w-12 h-1 bg-gradient-to-r from-[#E62B1E] to-[#FF4136] mx-auto mb-4 rounded-full"></div>
-
-                    {/* Quote */}
-                    <p className="text-muted-foreground italic text-sm leading-relaxed">"{member.quote}"</p>
+                  {/* Reverso de la tarjeta */}
+                  <div
+                    className={`absolute inset-0 ${member.bgColor} rounded-2xl backface-hidden rotate-y-180 shadow-xl p-8 flex flex-col justify-center items-center text-white`}
+                  >
+                    <div className="text-center">
+                      <h3 className="text-2xl font-bold mb-4">{member.name}</h3>
+                      <p className="text-base italic mb-6 leading-relaxed">"{member.phrase}"</p>
+                      <p className="text-base leading-relaxed">Biografía</p>
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Team Description */}
-            <div className="animate-fade-in-up">
-              <Card className="bg-gradient-to-br from-gray-50 to-white border-2 hover:shadow-2xl transition-shadow duration-500">
-                <CardContent className="p-10">
-                  <div className="flex items-center justify-center mb-6">
-                    <div className="h-1 w-16 bg-[#E62B1E] rounded-full"></div>
-                    <h2 className="text-3xl font-bold text-center mx-4">Estudiantes Apasionados por las Ideas</h2>
-                    <div className="h-1 w-16 bg-[#E62B1E] rounded-full"></div>
-                  </div>
-                  <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto leading-relaxed">
-                    Nuestro equipo está conformado por estudiantes del Tecnológico de Monterrey Campus Saltillo, unidos
-                    por la pasión de crear un evento que inspire y conecte a nuestra comunidad. Cada miembro aporta su
-                    talento único para hacer realidad esta experiencia transformadora.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+
+      <style jsx>{`
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+        .transform-style-3d {
+          transform-style: preserve-3d;
+        }
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+        .group:hover .group-hover\\:rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+      `}</style>
+    </main>
   )
 }
