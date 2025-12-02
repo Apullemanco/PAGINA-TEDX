@@ -14,7 +14,7 @@ export default function HorarioPage() {
   const scheduleEvents = [
     {
       title: "Registro",
-      time: "11:30 pm - 12:00 pm",
+      time: "11:30 am - 12:00 pm",
       description: "Registro de asistentes y entrega de materiales",
       type: "registration",
     },
