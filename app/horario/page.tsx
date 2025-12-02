@@ -14,13 +14,13 @@ export default function HorarioPage() {
   const scheduleEvents = [
     {
       title: "Registro",
-      time: "12:00 pm - 12:30 pm",
+      time: "11:30 pm - 12:00 pm",
       description: "Registro de asistentes y entrega de materiales",
       type: "registration",
     },
     {
       title: "Primera sesión",
-      time: "12:30 pm - 2:00 pm",
+      time: "12:00 pm - 2:00 pm",
       description: "Charlas inspiradoras de nuestros speakers",
       type: "session",
     },
@@ -32,19 +32,19 @@ export default function HorarioPage() {
     },
     {
       title: "Segunda sesión",
-      time: "3:00 pm - 4:30 pm",
+      time: "3:00 pm - 5:00 pm",
       description: "Continuamos con más charlas transformadoras",
       type: "session",
     },
     {
       title: "Break",
-      time: "4:30 pm - 5:00 pm",
+      time: "5:00 pm - 6:00 pm",
       description: "Pausa para conectar con otros asistentes",
       type: "break",
     },
     {
       title: "Tercera sesión",
-      time: "5:00 pm - 6:30 pm",
+      time: "6:00 pm - 8:00 pm",
       description: "¡No te pierdas ningún momento!",
       type: "session",
     },
