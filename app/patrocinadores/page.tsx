@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Building2, ArrowLeft } from "lucide-react"
+import { Building2, ArrowLeft, Mail } from "lucide-react"
 import Link from "next/link"
 
 export default function PatrocinadoresPage() {
@@ -21,12 +21,21 @@ export default function PatrocinadoresPage() {
             </CardContent>
           </Card>
 
-          <Button asChild size="lg">
-            <Link href="/">
-              <ArrowLeft className="mr-2 h-5 w-5" />
-              Volver al Inicio
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <Button asChild size="lg" className="bg-[#E62B1E] hover:bg-[#C62317] text-white">
+              <a href="mailto:tedxtecnologicodemonterrey@gmail.com?subject=Interés en Patrocinio TEDx Tecnológico de Monterrey">
+                <Mail className="mr-2 h-5 w-5" />
+                Conviértete en Patrocinador
+              </a>
+            </Button>
+
+            <Button asChild size="lg" variant="outline">
+              <Link href="/">
+                <ArrowLeft className="mr-2 h-5 w-5" />
+                Volver al Inicio
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </main>
