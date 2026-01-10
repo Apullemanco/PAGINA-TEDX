@@ -1,11 +1,7 @@
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-
 export default function AvisoPrivacidad() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
-
+      {/* Removidos Header y Footer para evitar duplicación */}
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12 animate-fade-in-up">
@@ -112,7 +108,7 @@ export default function AvisoPrivacidad() {
         </div>
       </main>
 
-      <Footer />
+      {/* Removidos Header y Footer para evitar duplicación */}
     </div>
   )
 }

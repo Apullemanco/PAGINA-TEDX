@@ -1,8 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
 import { ChevronDownIcon } from "@heroicons/react/24/outline"
 
 interface FAQ {
@@ -27,9 +25,8 @@ const faqs: FAQ[] = [
       "La información sobre la venta de boletos se publicará en nuestro sitio web y redes sociales oficiales cuando esté disponible. Te recomendamos seguir nuestras redes sociales para estar al tanto de los anuncios importantes.",
   },
   {
-    question: "¿Puedo proponer un tema o speaker para el evento?",
-    answer:
-      "¡Por supuesto! Valoramos las propuestas de la comunidad. Puedes enviarnos tus sugerencias de temas o speakers a través de nuestros canales de contacto. Todas las propuestas serán evaluadas por nuestro equipo organizador.",
+    question: "¿El evento es únicamente para comunidad Tec?",
+    answer: "No, el evento no es solo para la comunidad del Tec y la venta de boletos está abierta a todo público.",
   },
   {
     question: "¿El evento es gratuito?",
@@ -61,35 +58,33 @@ export default function PreguntasFrecuentes() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      <Header />
-
+    <div className="min-h-screen bg-white">
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12 animate-fade-in-up">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">Preguntas Frecuentes</h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Preguntas Frecuentes</h1>
+            <p className="text-xl text-gray-600">
               Encuentra respuestas a las preguntas más comunes sobre TEDxTecnológico de Monterrey
             </p>
           </div>
 
           <div className="space-y-4 animate-slide-in-left">
             {faqs.map((faq, index) => (
-              <div key={index} className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+              <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-4 text-left bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 flex justify-between items-center"
+                  className="w-full px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors duration-200 flex justify-between items-center"
                 >
-                  <span className="font-semibold text-gray-900 dark:text-white">{faq.question}</span>
+                  <span className="font-semibold text-gray-900">{faq.question}</span>
                   <ChevronDownIcon
-                    className={`w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform duration-200 ${
+                    className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
                       openIndex === index ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {openIndex === index && (
-                  <div className="px-6 py-4 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">{faq.answer}</p>
+                  <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
               </div>
@@ -97,8 +92,6 @@ export default function PreguntasFrecuentes() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }
