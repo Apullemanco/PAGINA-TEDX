@@ -10,7 +10,7 @@ export default function SpeakersPage() {
   const bloques = [
     {
       nombre: "Bloque 1",
-      horario: "12:30 pm - 2:00 pm",
+      horario: "12:00 pm - 2:00 pm",
       speakers: [
         { imagen: "/images/speakers/ana-paula.jpg" },
         { imagen: "/images/speakers/alex.jpg" },
@@ -20,7 +20,7 @@ export default function SpeakersPage() {
     },
     {
       nombre: "Bloque 2",
-      horario: "3:00 pm - 4:30 pm",
+      horario: "3:00 pm - 5:00 pm",
       speakers: [
         { imagen: "/images/speakers/adrian.jpg" },
         { imagen: "/images/speakers/gladyz.jpg" },
@@ -30,7 +30,7 @@ export default function SpeakersPage() {
     },
     {
       nombre: "Bloque 3",
-      horario: "5:30 pm - 6:30 pm",
+      horario: "6:00 pm - 8:00 pm",
       speakers: [
         { imagen: "/images/speakers/nayeli.jpg" },
         { imagen: "/images/speakers/gretta.jpg" },
