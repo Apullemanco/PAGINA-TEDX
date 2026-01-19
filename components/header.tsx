@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, Mail } from "lucide-react"
+import { Menu, X, Mail, Ticket } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
@@ -49,15 +49,30 @@ export function Header() {
             </nav>
           </div>
 
-          <div className="hidden lg:flex flex-1 justify-end">
+          <div className="hidden lg:flex flex-1 justify-end items-center gap-3">
             <Button
               asChild
-              className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+              variant="outline"
+              className="border-red-600 text-red-600 hover:bg-red-50 transition-all duration-300 bg-transparent"
             >
               <Link href="/contacto" className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
                 Contacto
               </Link>
+            </Button>
+            <Button
+              asChild
+              className="bg-red-600 hover:bg-red-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <a 
+                href="https://eventos.tec.mx/s/lt-event?language=es_MX&id=a5uUG000000LhQ9YAK&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnhNu9ATLig8roBX6AkoAZHu6g8-7MhgUd49kaWyBu4va82nr5c0C9m-WLT6g_aem_vWu7nzVT3NNVXsoooPMC7w" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Ticket className="h-4 w-4" />
+                Boletos
+              </a>
             </Button>
           </div>
 
@@ -83,7 +98,7 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Button asChild className="bg-red-600 hover:bg-red-700 text-white shadow-lg w-full">
+              <Button asChild variant="outline" className="border-red-600 text-red-600 hover:bg-red-50 w-full bg-transparent">
                 <Link
                   href="/contacto"
                   className="flex items-center justify-center gap-2"
@@ -92,6 +107,18 @@ export function Header() {
                   <Mail className="h-4 w-4" />
                   Contacto
                 </Link>
+              </Button>
+              <Button asChild className="bg-red-600 hover:bg-red-700 text-white shadow-lg w-full">
+                <a
+                  href="https://eventos.tec.mx/s/lt-event?language=es_MX&id=a5uUG000000LhQ9YAK&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnhNu9ATLig8roBX6AkoAZHu6g8-7MhgUd49kaWyBu4va82nr5c0C9m-WLT6g_aem_vWu7nzVT3NNVXsoooPMC7w"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Ticket className="h-4 w-4" />
+                  Boletos
+                </a>
               </Button>
             </nav>
           </div>

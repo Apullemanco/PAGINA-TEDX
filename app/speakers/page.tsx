@@ -35,6 +35,7 @@ export default function SpeakersPage() {
         { imagen: "/images/speakers/nayeli.jpg" },
         { imagen: "/images/speakers/gretta.jpg" },
         { imagen: "/images/speakers/arturo.jpg" },
+        { imagen: "/images/speakers/karen.jpg" },
       ],
     },
   ]
@@ -56,7 +57,7 @@ export default function SpeakersPage() {
               </div>
 
               <div
-                className={`grid gap-8 ${bloque.nombre === "Bloque 3" ? "md:grid-cols-3 justify-items-center max-w-6xl mx-auto" : "md:grid-cols-2 lg:grid-cols-4"}`}
+                className={`grid gap-8 md:grid-cols-2 lg:grid-cols-4`}
               >
                 {bloque.speakers.map((speaker, speakerIndex) => (
                   <div
