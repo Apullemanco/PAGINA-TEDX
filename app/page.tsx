@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Calendar, MapPin, Users, Lightbulb, Sparkles } from "lucide-react"
+import { ArrowRight, Calendar, MapPin, Users, Lightbulb, Ticket, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
@@ -44,7 +44,7 @@ export default function HomePage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url(https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tedx-7IgGR8zzk63a80flAyhlj6BhwQRqgu.jpg)",
+              "url(/images/tedx.jpg)",
           }}
         >
           <div className="absolute inset-0 bg-black/70"></div>
@@ -78,21 +78,18 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="bg-[#E62B1E] hover:bg-[#C62616] text-white shadow-xl hover:shadow-2xl transition-all duration-300 text-lg px-8 py-6 group"
+                className="bg-gradient-to-r from-[#E62B1E] to-[#FF4136] hover:from-[#C62616] hover:to-[#E62B1E] text-white shadow-2xl hover:shadow-[0_0_40px_rgba(230,43,30,0.5)] transition-all duration-300 text-xl px-12 py-8 group animate-pulse hover:animate-none font-bold"
                 asChild
               >
-                <Link href="https://www.ted.com/tedx/events/66014" target="_blank" rel="noopener noreferrer">
-                  Próximamente
-                  <Sparkles className="ml-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                asChild
-                className="border-2 border-white text-white hover:bg-white hover:text-[#E62B1E] text-lg px-8 py-6 transition-all duration-300 bg-transparent"
-              >
-                <Link href="/acerca-de-ted">Conoce más sobre TED</Link>
+                <a 
+                  href="https://eventos.tec.mx/s/lt-event?language=es_MX&id=a5uUG000000LhQ9YAK&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnhNu9ATLig8roBX6AkoAZHu6g8-7MhgUd49kaWyBu4va82nr5c0C9m-WLT6g_aem_vWu7nzVT3NNVXsoooPMC7w" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <Ticket className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
+                  Compra tus Boletos
+                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
             </div>
           </div>
