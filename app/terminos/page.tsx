@@ -26,7 +26,6 @@ export default function TerminosCondiciones() {
             </p>
 
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">3. Registro y Boletos</h2>
-            <p className="text-gray-700 dark:text-gray-300 mb-4">• Los boletos son personales e intransferibles</p>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
               • La información proporcionada durante el registro debe ser veraz y completa
             </p>

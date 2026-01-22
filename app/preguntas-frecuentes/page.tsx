@@ -1,11 +1,13 @@
 "use client"
 
+import React from "react"
+
 import { useState } from "react"
 import { ChevronDownIcon } from "@heroicons/react/24/outline"
 
 interface FAQ {
   question: string
-  answer: string
+  answer: string | React.ReactNode
 }
 
 const faqs: FAQ[] = [
@@ -21,8 +23,29 @@ const faqs: FAQ[] = [
   },
   {
     question: "¿Cómo puedo obtener boletos para el evento?",
-    answer:
-      "La información sobre la venta de boletos se publicará en nuestro sitio web y redes sociales oficiales cuando esté disponible. Te recomendamos seguir nuestras redes sociales para estar al tanto de los anuncios importantes.",
+    answer: (
+      <span>
+        Puedes adquirir tus boletos de dos formas: en línea a través de nuestra{" "}
+        <a 
+          href="https://tec.rs/TEDxDestellosdelDesierto" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-red-600 hover:text-red-700 underline font-medium"
+        >
+          tienda oficial
+        </a>
+        , o de manera presencial enviando un mensaje directo a nuestra cuenta de{" "}
+        <a 
+          href="https://www.instagram.com/tedxtecnologicodemonterrey/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-red-600 hover:text-red-700 underline font-medium"
+        >
+          Instagram oficial
+        </a>
+        .
+      </span>
+    ),
   },
   {
     question: "¿El evento es únicamente para comunidad Tec?",
