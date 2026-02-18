@@ -2,8 +2,10 @@
 
 import { Clock } from "lucide-react"
 import { useEffect, useState } from "react"
+import { useLanguage } from "@/context/language-context"
 
 export default function HorarioPage() {
+  const { t } = useLanguage()
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -63,7 +65,7 @@ export default function HorarioPage() {
   ]
 
   useEffect(() => {
-    const eventDate = new Date("2026-02-27T00:00:00").getTime()
+    const eventDate = new Date("2026-02-27T12:00:00").getTime()
 
     const updateTimer = () => {
       const now = new Date().getTime()
@@ -96,15 +98,14 @@ export default function HorarioPage() {
               </div>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-[#E62B1E] to-[#FF4136] bg-clip-text text-transparent">
-                  Horario del Evento
+                  {t("Horario del Evento", "Event Schedule")}
                 </span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-                Descubre la experiencia completa de TEDx con charlas inspiradoras y oportunidades de networking
+                {t("Descubre la experiencia completa de TEDx con charlas inspiradoras y oportunidades de networking", "Discover the full TEDx experience with inspiring talks and networking opportunities")}
               </p>
               <p className="text-base text-muted-foreground italic">
-                Te recomendamos llegar 15 minutos antes del registro para asegurar tu lugar y disfrutar de toda la
-                experiencia TEDx.
+                {t("Te recomendamos llegar 15 minutos antes del registro para asegurar tu lugar y disfrutar de toda la experiencia TEDx.", "We recommend arriving 15 minutes before registration to secure your spot and enjoy the full TEDx experience.")}
               </p>
             </div>
 
@@ -113,9 +114,9 @@ export default function HorarioPage() {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gradient-to-r from-[#E62B1E] to-[#FF4136] text-white">
-                      <th className="px-6 py-4 text-left text-lg font-bold">Actividad</th>
-                      <th className="px-6 py-4 text-left text-lg font-bold">Horario</th>
-                      <th className="px-6 py-4 text-left text-lg font-bold">Descripción</th>
+                      <th className="px-6 py-4 text-left text-lg font-bold">{t("Actividad", "Activity")}</th>
+                      <th className="px-6 py-4 text-left text-lg font-bold">{t("Horario", "Time")}</th>
+                      <th className="px-6 py-4 text-left text-lg font-bold">{t("Descripción", "Description")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -160,18 +161,18 @@ export default function HorarioPage() {
             <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-red-50 rounded-xl p-6 border-2 border-[#E62B1E]/20">
                 <div className="w-4 h-4 rounded-full bg-[#E62B1E] mb-3"></div>
-                <h3 className="font-bold text-lg mb-2">Sesiones de charlas</h3>
-                <p className="text-sm text-muted-foreground">Ideas inspiradoras que vale la pena difundir</p>
+                <h3 className="font-bold text-lg mb-2">{t("Sesiones de charlas", "Talk Sessions")}</h3>
+                <p className="text-sm text-muted-foreground">{t("Ideas inspiradoras que vale la pena difundir", "Inspiring ideas worth spreading")}</p>
               </div>
               <div className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200">
                 <div className="w-4 h-4 rounded-full bg-black mb-3"></div>
-                <h3 className="font-bold text-lg mb-2">Breaks y networking</h3>
-                <p className="text-sm text-muted-foreground">Momentos para conectar con la comunidad</p>
+                <h3 className="font-bold text-lg mb-2">{t("Breaks y networking", "Breaks & Networking")}</h3>
+                <p className="text-sm text-muted-foreground">{t("Momentos para conectar con la comunidad", "Moments to connect with the community")}</p>
               </div>
               <div className="bg-white rounded-xl p-6 border-2 border-gray-200">
                 <div className="w-4 h-4 rounded-full bg-gray-400 mb-3"></div>
-                <h3 className="font-bold text-lg mb-2">Registro</h3>
-                <p className="text-sm text-muted-foreground">Bienvenida y entrega de materiales</p>
+                <h3 className="font-bold text-lg mb-2">{t("Registro", "Registration")}</h3>
+                <p className="text-sm text-muted-foreground">{t("Bienvenida y entrega de materiales", "Welcome and materials delivery")}</p>
               </div>
             </div>
           </div>
@@ -181,23 +182,23 @@ export default function HorarioPage() {
       <section className="py-16 bg-gradient-to-br from-[#E62B1E] to-[#FF4136]">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center text-white">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-8">Cuenta Regresiva para el Evento</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-8">{t("Cuenta Regresiva para el Evento", "Event Countdown")}</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
                 <div className="text-5xl lg:text-6xl font-black mb-2">{timeLeft.days}</div>
-                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">Días</div>
+                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">{t("Días", "Days")}</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
                 <div className="text-5xl lg:text-6xl font-black mb-2">{timeLeft.hours}</div>
-                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">Horas</div>
+                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">{t("Horas", "Hours")}</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
                 <div className="text-5xl lg:text-6xl font-black mb-2">{timeLeft.minutes}</div>
-                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">Minutos</div>
+                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">{t("Minutos", "Minutes")}</div>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-xl">
                 <div className="text-5xl lg:text-6xl font-black mb-2">{timeLeft.seconds}</div>
-                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">Segundos</div>
+                <div className="text-sm lg:text-base uppercase tracking-wider font-semibold">{t("Segundos", "Seconds")}</div>
               </div>
             </div>
           </div>

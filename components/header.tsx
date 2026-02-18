@@ -2,20 +2,22 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { Menu, X, Mail, Ticket } from "lucide-react"
+import { Menu, X, Mail, Ticket, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { useLanguage } from "@/context/language-context"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { language, toggleLanguage, t } = useLanguage()
 
   const menuItems = [
-    { href: "/", label: "INICIO" },
+    { href: "/", label: t("INICIO", "HOME") },
     { href: "/speakers", label: "SPEAKERS" },
-    { href: "/horario", label: "HORARIO" },
-    { href: "/acerca-de-ted", label: "ACERCA DE TED" },
-    { href: "/equipo", label: "EQUIPO" },
-    { href: "/patrocinadores", label: "PATROCINADORES" },
+    { href: "/horario", label: t("HORARIO", "SCHEDULE") },
+    { href: "/acerca-de-ted", label: t("ACERCA DE TED", "ABOUT TED") },
+    { href: "/equipo", label: t("EQUIPO", "TEAM") },
+    { href: "/patrocinadores", label: t("PATROCINADORES", "SPONSORS") },
   ]
 
   return (
@@ -51,13 +53,22 @@ export function Header() {
 
           <div className="hidden lg:flex flex-1 justify-end items-center gap-3">
             <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleLanguage}
+              className="text-gray-700 hover:text-red-600 transition-all duration-300 gap-1.5"
+            >
+              <Globe className="h-4 w-4" />
+              {language === "es" ? "EN" : "ES"}
+            </Button>
+            <Button
               asChild
               variant="outline"
               className="border-red-600 text-red-600 hover:bg-red-50 transition-all duration-300 bg-transparent"
             >
               <Link href="/contacto" className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                Contacto
+                {t("Contacto", "Contact")}
               </Link>
             </Button>
             <Button
@@ -71,7 +82,7 @@ export function Header() {
                 className="flex items-center gap-2"
               >
                 <Ticket className="h-4 w-4" />
-                Boletos
+                {t("Boletos", "Tickets")}
               </a>
             </Button>
           </div>
@@ -98,6 +109,14 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
+              <Button
+                variant="ghost"
+                onClick={toggleLanguage}
+                className="w-full text-gray-700 hover:text-red-600 transition-all duration-300 gap-2"
+              >
+                <Globe className="h-4 w-4" />
+                {language === "es" ? "English" : "Espanol"}
+              </Button>
               <Button asChild variant="outline" className="border-red-600 text-red-600 hover:bg-red-50 w-full bg-transparent">
                 <Link
                   href="/contacto"
@@ -105,7 +124,7 @@ export function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Mail className="h-4 w-4" />
-                  Contacto
+                  {t("Contacto", "Contact")}
                 </Link>
               </Button>
               <Button asChild className="bg-red-600 hover:bg-red-700 text-white shadow-lg w-full">
@@ -117,7 +136,7 @@ export function Header() {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <Ticket className="h-4 w-4" />
-                  Boletos
+                  {t("Boletos", "Tickets")}
                 </a>
               </Button>
             </nav>
