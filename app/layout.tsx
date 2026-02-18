@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { LanguageProvider } from "@/context/language-context"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -23,9 +24,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="font-sans bg-white text-gray-900 antialiased">
-        <Header />
-        <Suspense fallback={null}>{children}</Suspense>
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          <Suspense fallback={null}>{children}</Suspense>
+          <Footer />
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>
