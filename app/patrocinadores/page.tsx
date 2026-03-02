@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Mail } from "lucide-react"
 import Link from "next/link"
-// import Image from "next/image"
+import Image from "next/image"
 
 const sponsors = [
   { nombre: "Coahuila Pa' Delante", logo: "/images/sponsors/coahuila.jpg" },
@@ -9,9 +9,9 @@ const sponsors = [
   { nombre: "Juan Rodriguez DMS3 - Diseno de Madera", logo: "/images/sponsors/diseno-madera.jpg" },
   { nombre: "Museo del Desierto", logo: "/images/sponsors/museo-desierto.png" },
   { nombre: "Pepewates", logo: "/images/sponsors/pepewates.png" },
-  { nombre: "Notaria 8 Ocho", logo: "/images/sponsors/notaria8.png" },
-  { nombre: "Promanuez", logo: "/images/sponsors/promanuez.jpg" },
-  { nombre: "Doctor", logo: "/images/sponsors/doctor.png" },
+  { nombre: "Notaria 8 Ocho", logo: "/images/sponsors/New Project (4).png" },
+  { nombre: "Promanuez", logo: "/images/sponsors/New Project (3).png" },
+  { nombre: "Doctor", logo: "/images/sponsors/New Project (2).png" },
 ]
 
 export default function PatrocinadoresPage() {
@@ -31,7 +31,7 @@ export default function PatrocinadoresPage() {
                 key={sponsor.nombre}
                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex items-center justify-center border border-gray-100"
               >
-                <img
+                <Image
                   src={sponsor.logo}
                   alt={sponsor.nombre}
                   width={220}
