@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Mail } from "lucide-react"
 import Link from "next/link"
-// import Image from "next/image"
+import Image from "next/image"
 
 const sponsors = [
   { nombre: "Coahuila Pa' Delante", logo: "/images/sponsors/coahuila.jpg" },
@@ -31,7 +31,7 @@ export default function PatrocinadoresPage() {
                 key={sponsor.nombre}
                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex items-center justify-center border border-gray-100"
               >
-                <img
+                <Image
                   src={sponsor.logo}
                   alt={sponsor.nombre}
                   width={220}
