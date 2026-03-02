@@ -7,7 +7,8 @@ const sponsors = [
   { nombre: "Coahuila Pa' Delante", logo: "/images/sponsors/coahuila.jpg" },
   { nombre: "Soltran", logo: "/images/sponsors/soltran.png" },
   { nombre: "Juan Rodriguez DMS3 - Diseno de Madera", logo: "/images/sponsors/diseno-madera.jpg" },
-  { nombre: "Pepewates", logo: "/images/sponsors/pepewates.jpg" },
+  { nombre: "Museo del Desierto", logo: "/images/sponsors/museo-desierto.png" },
+  { nombre: "Pepewates", logo: "/images/sponsors/pepewates.png" },
   { nombre: "Notaria 8 Ocho", logo: "/images/sponsors/notaria8.jpg" },
   { nombre: "Promanuez", logo: "/images/sponsors/promanuez.jpg" },
 ]
