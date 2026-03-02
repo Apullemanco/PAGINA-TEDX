@@ -9,9 +9,9 @@ const sponsors = [
   { nombre: "Juan Rodriguez DMS3 - Diseno de Madera", logo: "/images/sponsors/diseno-madera.jpg" },
   { nombre: "Museo del Desierto", logo: "/images/sponsors/museo-desierto.png" },
   { nombre: "Pepewates", logo: "/images/sponsors/pepewates.png" },
-  { nombre: "Notaria 8 Ocho", logo: "/images/sponsors/notaria8.png" },
-  { nombre: "Promanuez", logo: "/images/sponsors/promanuez.jpg" },
-  { nombre: "Doctor", logo: "/images/sponsors/doctor.png" },
+  { nombre: "Notaria 8 Ocho", logo: "/images/sponsors/New Project (4).png" },
+  { nombre: "Promanuez", logo: "/images/sponsors/New Project (3).png" },
+  { nombre: "Doctor", logo: "/images/sponsors/New Project (2).png" },
 ]
 
 export default function PatrocinadoresPage() {
