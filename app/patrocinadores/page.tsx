@@ -11,7 +11,7 @@ const sponsors = [
   { nombre: "Pepewates", logo: "/images/sponsors/pepewates.png" },
   { nombre: "Notaria 8 Ocho", logo: "/images/sponsors/New Project (4).png" },
   { nombre: "Promanuez", logo: "/images/sponsors/New Project (3).png" },
-  { nombre: "Doctor", logo: "/images/sponsors/New Project (2).png" },
+  { nombre: "Doctor", logo: "/images/sponsors/doctor.png" },
 ]
 
 export default function PatrocinadoresPage() {
