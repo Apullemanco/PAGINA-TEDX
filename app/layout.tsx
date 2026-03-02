@@ -1,11 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { LanguageProvider } from "@/context/language-context"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -24,10 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} bg-white text-gray-900`}>
-        <Header />
-        <Suspense fallback={null}>{children}</Suspense>
-        <Footer />
+      <body className="font-sans bg-white text-gray-900 antialiased">
+        <LanguageProvider>
+          <Header />
+          <Suspense fallback={null}>{children}</Suspense>
+          <Footer />
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>
