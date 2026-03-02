@@ -9,7 +9,7 @@ const sponsors = [
   { nombre: "Juan Rodriguez DMS3 - Diseno de Madera", logo: "/images/sponsors/diseno-madera.jpg" },
   { nombre: "Museo del Desierto", logo: "/images/sponsors/museo-desierto.png" },
   { nombre: "Pepewates", logo: "/images/sponsors/pepewates.png" },
-  { nombre: "Notaria 8 Ocho", logo: "/images/sponsors/notaria8.jpg" },
+  { nombre: "Notaria 8 Ocho", logo: "/images/sponsors/notaria8.png" },
   { nombre: "Promanuez", logo: "/images/sponsors/promanuez.jpg" },
   { nombre: "Doctor", logo: "/images/sponsors/doctor.png" },
 ]
