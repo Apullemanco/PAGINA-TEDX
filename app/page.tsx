@@ -49,7 +49,7 @@ export default function HomePage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url(/images/tedx.jpg)",
+              `url(${siteConfig?.hero_image || "/images/tedx.jpg"})`,
           }}
         >
           <div className="absolute inset-0 bg-black/70"></div>
@@ -67,10 +67,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4 text-balance">Tecnológico de Monterrey</h2>
+            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-4 text-balance">{siteConfig?.edition_name || "TEDxTecnológico de Monterrey"}</h2>
             <div className="flex items-center justify-center gap-2 mb-8">
               <div className="h-1 w-12 bg-[#E62B1E] rounded-full"></div>
-              <p className="text-xl lg:text-2xl text-[#E62B1E] font-semibold">Destellos del Desierto</p>
+              <p className="text-xl lg:text-2xl text-[#E62B1E] font-semibold">{siteConfig?.edition_tagline}</p>
               <div className="h-1 w-12 bg-[#E62B1E] rounded-full"></div>
             </div>
 
@@ -79,7 +79,7 @@ export default function HomePage() {
                 "Únete a nosotros el ",
                 "Join us on "
               )}
-              <span className="font-bold text-[#E62B1E]">{t("27 de febrero de 2026", "February 27, 2026")}</span>
+              <span className="font-bold text-[#E62B1E]">{new Intl.DateTimeFormat("es-MX", { dateStyle: "long", timeZone: "America/Mexico_City" }).format(new Date(eventDate))}</span>
               {t(
                 " para una experiencia única de ideas innovadoras, inspiración y conexión en el Campus Saltillo del Tecnológico de Monterrey.",
                 " for a unique experience of innovative ideas, inspiration and connection at the Saltillo Campus of Tecnológico de Monterrey."
@@ -98,7 +98,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                 >
                   <Ticket className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
-                  {t("Compra tus Boletos", "Get Your Tickets")}
+                  {siteConfig?.primary_cta_label || t("Compra tus Boletos", "Get Your Tickets")}
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
@@ -161,8 +161,8 @@ export default function HomePage() {
                     <MapPin className="h-10 w-10 text-[#E62B1E]" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">{t("Ubicación", "Location")}</h3>
-                  <p className="text-lg font-semibold text-foreground">Tecnológico de Monterrey</p>
-                  <p className="text-sm text-muted-foreground mt-2">Campus Saltillo</p>
+                  <p className="text-lg font-semibold text-foreground">{siteConfig?.venue_name}</p>
+                  <p className="text-sm text-muted-foreground mt-2">{siteConfig?.venue_detail}</p>
                 </div>
               </CardContent>
             </Card>
