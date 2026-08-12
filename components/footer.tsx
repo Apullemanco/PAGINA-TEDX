@@ -49,6 +49,12 @@ export function Footer() {
             >
               Configuración
             </Link>
+            <Link
+              href="/archivo/destellos"
+              className="text-sm text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black transition-colors"
+            >
+              Archivo Destellos del Desierto
+            </Link>
           </div>
         </div>
 
