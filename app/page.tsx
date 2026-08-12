@@ -6,9 +6,12 @@ import { ArrowRight, Calendar, MapPin, Users, Lightbulb, Ticket, Sparkles } from
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useLanguage } from "@/context/language-context"
+import { useSiteConfig } from "@/context/site-config-context"
 
 export default function HomePage() {
   const { t } = useLanguage()
+  const siteConfig = useSiteConfig()
+  const eventDate = siteConfig?.event_date ?? "2026-11-14T09:00:00-06:00"
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -17,11 +20,11 @@ export default function HomePage() {
   })
 
   useEffect(() => {
-    const eventDate = new Date("2026-02-27T12:00:00").getTime()
+    const target = new Date(eventDate).getTime()
 
     const updateTimer = () => {
-      const now = new Date().getTime()
-      const distance = eventDate - now
+      const now = Date.now()
+      const distance = Math.max(0, target - now)
 
       if (distance > 0) {
         setTimeLeft({
@@ -37,7 +40,7 @@ export default function HomePage() {
     const interval = setInterval(updateTimer, 1000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [eventDate])
 
   return (
     <div className="min-h-screen bg-background">
@@ -90,7 +93,7 @@ export default function HomePage() {
                 asChild
               >
                 <a 
-                  href="https://eventos.tec.mx/s/lt-event?language=es_MX&id=a5uUG000000LhQ9YAK&utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnhNu9ATLig8roBX6AkoAZHu6g8-7MhgUd49kaWyBu4va82nr5c0C9m-WLT6g_aem_vWu7nzVT3NNVXsoooPMC7w" 
+                  href={siteConfig?.ticket_url || "#"} 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >

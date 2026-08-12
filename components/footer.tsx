@@ -43,6 +43,12 @@ export function Footer() {
             >
               Contacto
             </Link>
+            <Link
+              href="/configuracion"
+              className="text-sm text-gray-300 dark:text-gray-700 hover:text-white dark:hover:text-black transition-colors"
+            >
+              Configuración
+            </Link>
           </div>
         </div>
 
